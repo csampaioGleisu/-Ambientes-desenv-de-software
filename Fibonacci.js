@@ -8,5 +8,5 @@ function GerarFibonacci(number){
     return fibonacci;
     }
     var n = GerarFibonacci(12);
-    //Assim quanto mais números for colocado mais repetições irá ter.
+    //Assim quanto maior o número colocado maior a quantidade de interações.
     console.log(n);
