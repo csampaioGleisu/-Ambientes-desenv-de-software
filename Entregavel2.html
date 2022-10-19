@@ -1,106 +1,118 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algoritmos</title>
-    <style>
-      body{
-         background-image:linear-gradient(70deg, violet, blue, rgb(92, 13, 92));
-         color: black;
-       border-bottom-color: green;
-        
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algoritmos</title>
+  <style>
+    body {
+      background-image: linear-gradient(70deg, gray, blue, rgb(92, 13, 92));
+      color: black;
+      border-bottom-color: rgb(127, 255, 148);
+
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Teste de Algoritmos</h1>
+  <h3> Contagem </h3> Primeiro número<br />
+  <input id="N1" type="Number" /><br />
+  Segundo número<br />
+  <input id="N2" type="Number" /><br />
+  <button id="b1" onclick="Contagem1()">Calcular</button><br />
+  O resultado é: <span></span><br />
+
+  <h3>Somatório</h3>
+  <button onclick="Somar()">Clique para Listar elementos</button>
+  <h5>
+    <p id="resultadoSomatorio">A soma dos números é:</p>
+  </h5>
+  <h3>Fibonacci</h3>
+
+  <input type text="text" id="txtloop" />
+  <input type="button" id="btnEnter" value="Calcular " onclick="fibonacci_series(txtloop.value)" />
+  <h5>
+    <p id="ResultadoFibo">Resultado do Fibonacci é:</p>
+  </h5>
+  <h3>Ordenação</h3>
+  Digite os números:
+  <p></p>
+  <input id="v1" type="number">
+  <p></p>
+  <input id="v2" type="number">
+  <p></p>
+  <input id="v3" type="number">
+  <p></p>
+  <input id="v4" type="number">
+  <p></p>
+  <input id="v5" type="number">
+  <p></p>
+  <button onclick="funcao()">Ordenar</button>
+  <p id="result1"></p>
+
+  <h3>Número Primo</h3>
+  <span>Entre com um número: </span><input type="number" id="num" />
+  <input type="button" value="Enter" onclick="verificarPrimo();" />
+  <p id="resposta"></p>
+
+  <h3>Maximo Divisor Comum</h3>
+  <span>Coloque os números desejados: </span><br />
+  Primeiro número<br />
+  <input type="number" id="mdcN" /><br />
+  Segundo número<br />
+  <input type="number" id="mdcN2" /><br />
+  <input type="button" value="Enter" onclick="teste()" />
+  <p id="resp"></p>
+
+  <script>
+    var N1 = document.querySelector('#N1')
+    var N2 = document.querySelector('#N2')
+    var resultado = document.querySelector('span')
+    var dois = 2;
+    var i = 1;
+    function Contagem1() {
+      if (N1.value == 1) {
+        resultado.innerHTML = parseInt(N2.value) - parseInt(N1.value) + parseInt(dois);
       }
-    
-    </style>
-  </head>
-  <body>
-    <h1>Teste de Algoritmos</h1>
-    <h3> Contagem </h3> Primeiro número<br />
-    <input id="N1"  type="Number"/><br />
-     Segundo número<br />
-    <input id="N2"  type="Number"/><br />
-    <button id="b1" onclick="Contagem1()">Calcular</button><br />
-     O resultado é: <span></span><br />
-     <h3>Somatório</h3>
-     <button onclick="Somar()">Clique para Listar elementos e Calcular Somatório</button>
-    <h5><p id="resultadoSomatorio">A soma dos números é:</p></h5>
-    <h3>Fibonacci</h3>
-    <input type text="text" id="txtloop" />
-    <input type="button" id="btnEnter" value="Calcular " onclick="fibonacci_series(txtloop.value)"/>
-    <h5><p id="ResultadoFibo">Resultado do Fibonacci é:</p></h5>
-
-<h3>Ordenação</h3>
-Digite os números:
-<p></p>
-<input id="v1" type="number">
-<p></p>
-<input id="v2" type="number">
-<p></p>
-<input id="v3" type="number">
-<p></p>
-<button onclick="funcao()">Ordenar</button>
-<p id="result1"></p>
-
-<h3>Número Primo</h3>
-<span>Entre com um número: </span><input type="number" id="num" />
-<input type="button" value="Ok" onclick="verificarPrimo();" />
-<p id="resposta"></p>
-<h3>Maximo Divisor Comum</h3>
-<span>Coloque os números desejados: </span><input type="number" id="mdcN" />
-<input type="number" id="mdcN2" /><br />
-<input type="button" value="Enter" onclick="teste()" />
-<p id="resp"></p>
-
-    <script>
-     var N1 = document.querySelector('#N1')
-     var N2 = document.querySelector('#N2')
-var resultado = document.querySelector('span')
-var dois =2;
-var i = 1;
-function Contagem1() {
-  if(N1.value == 1){
-   resultado.innerHTML = parseInt(N2.value) - parseInt(N1.value) + parseInt(dois);
-  }
-  else{
-  resultado.innerHTML = parseInt(N2.value) - parseInt(N1.value) + parseInt(i);
-  }
-}
-    </script>
+      else {
+        resultado.innerHTML = parseInt(N2.value) - parseInt(N1.value) + parseInt(i);
+      }
+    }
+  </script>
 
 
-<script>
-var numero;
-var soma = 0;
+  <script>
+    var numero;
+    var soma = 0;
 
-function Somar(){
-for (var i = 0; i < 5; i++) {
- numero = Number(prompt("Entre com os numeros que deseja somar: "));
-  soma+= numero;
- document.getElementById("resultadoSomatorio").innerHTML = "A soma dos números é: " +soma
-}
-}
-</script>
+    function Somar() {
+      for (var i = 0; i < 5; i++) {
+        numero = Number(prompt("Entre com os numeros que deseja somar: "));
+        soma += numero;
+        document.getElementById("resultadoSomatorio").innerHTML = "A soma dos números é: " + soma
+      }
+    }
+  </script>
 
 
-   <script>
-   
-   var fibonacci_series = function GerarFibonacci(n){
-    if (n==1) 
-  {
-var loop = [0, 1];
-   document.getElementById("ResultadoFibo").innerHTML = loop;
-  return loop
-  }
-  else 
-  {
-    var x = fibonacci_series(n - 1);
-    x.push(x[x.length - 1] + x[x.length - 2]);
-    document.getElementById("ResultadoFibo").innerHTML =x;
-    return x;
-  }
-   }
+  <script>
+
+    var fibonacci_series = function GerarFibonacci(n) {
+      if (n == 1) {
+        var loop = [0, 1];
+        document.getElementById("ResultadoFibo").innerHTML = loop;
+        return loop
+      }
+      else {
+        var x = fibonacci_series(n - 1);
+        x.push(x[x.length - 1] + x[x.length - 2]);
+        document.getElementById("ResultadoFibo").innerHTML = x;
+        return x;
+      }
+    }
  //   var fibonacci = [];
  //   fibonacci[0] = 0;
  //   fibonacci[1] = 1;
@@ -109,71 +121,74 @@ var loop = [0, 1];
  //   }
  //   return fibonacci;
  //  var n = GerarFibonacci(12);
- 
-    
-    
-   </script>
-
-     <script>
-
-  function verificarPrimo(){
-var num = document.getElementById("num").value;
-var count = 0;
-
-if (num != null){
-         for(i=2; i < num; i++){
-              var resto = num % i;
-              if(resto == 0){
-                  document.getElementById("resposta").innerHTML = "O número "+num+" não é primo!";
-                break;
-              }else {
-           count+=1;
-       }
-       }
-   if(count == (num-2)){
-       document.getElementById("resposta").innerHTML = "O número "+num+" é primo!";
-   }
-}
-}
-    </script>
 
 
-<script>
- 
-function calcularMDC (num1,num2) {
-  //var num1 = document.getElementsById("mdcN").value;
-  //var num2 = document.getElementById("mdcN2").value;
-var resto;
-do {
-    resto = num1 % num2;
-    num1 = num2;
-    num2 = resto;
-} while (resto != 0);
-return num1;
 
-}
-function teste(){
-var results = calcularMDC(mdcN.value, mdcN2.value)
-document.getElementById("resp").innerHTML = "O maximo divisor comum entre os números é: " + results
-}
-</script>
+  </script>
 
+  <script>
 
-<script>
- function funcao(){
-      function cres (pr1, pr2){
-            return pr1 - pr2;
-        } 
-        var vetOr = Array(
-            (document.getElementById("v1").value),
-            (document.getElementById("v2").value),
-            (document.getElementById("v3").value));
-          
-            var vetCres = vetOr;
-            document.getElementById("result1").innerHTML = "Ordem Crescente: " + vetCres.sort(cres);
+    function verificarPrimo() {
+      var num = document.getElementById("num").value;
+      var count = 0;
+
+      if (num != null) {
+        for (i = 2; i < num; i++) {
+          var resto = num % i;
+          if (resto == 0) {
+            document.getElementById("resposta").innerHTML = "O número " + num + " não é primo!";
+            break;
+          } else {
+            count += 1;
+          }
+        }
+        if (count == (num - 2)) {
+          document.getElementById("resposta").innerHTML = "O número " + num + " é primo!";
+        }
       }
-</script>
+    }
+  </script>
 
 
-  </body>
+  <script>
+
+    function calcularMDC(num1, num2) {
+      //var num1 = document.getElementsById("mdcN").value;
+      //var num2 = document.getElementById("mdcN2").value;
+      var resto;
+      do {
+        resto = num1 % num2;
+        num1 = num2;
+        num2 = resto;
+      } while (resto != 0);
+      return num1;
+
+    }
+    function teste() {
+      var results = calcularMDC(mdcN.value, mdcN2.value)
+      document.getElementById("resp").innerHTML = "O maximo divisor comum dos números é: " + results
+    }
+  </script>
+
+
+  <script>
+    function funcao() {
+      function cres(pr1, pr2) {
+        return pr1 - pr2;
+      }
+      var vetOr = Array(
+        (document.getElementById("v1").value),
+        (document.getElementById("v2").value),
+        (document.getElementById("v3").value),
+        (document.getElementById("v4").value),
+        (document.getElementById("v5").value));
+
+      var vetCres = vetOr;
+      document.getElementById("result1").innerHTML = "Ordem Crescente: " + vetCres.sort(cres);
+    }
+  </script>
+
+
+</body>
+
 </html>
