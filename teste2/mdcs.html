@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algoritmos</title>
+  <style>
+    body {
+      background-image: linear-gradient(70deg, gray, blue, rgb(92, 13, 92));
+      color: blue;
+      border-bottom-color: rgb(127, 255, 148);
+      background-size: 10000px;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>Maximo Divisor Comum</h3>
+  <span>Coloque os números desejados: </span><br />
+  Primeiro número<br />
+  <input type="number" id="mdcN" /><br />
+  Segundo número<br />
+  <input type="number" id="mdcN2" /><br />
+  <input type="button" value="Enter" onclick="teste()" />
+  <p id="resp"></p>
+  <a href="/Entregavel2.html">Retornar</a>
+
+  <script>
+
+    function calcularMDC(num1, num2) {
+      //var num1 = document.getElementsById("mdcN").value;
+      //var num2 = document.getElementById("mdcN2").value;
+      var resto;
+      do {
+        resto = num1 % num2;
+        num1 = num2;
+        num2 = resto;
+      } while (resto != 0);
+      return num1;
+
+    }
+    function teste() {
+      var results = calcularMDC(mdcN.value, mdcN2.value)
+      document.getElementById("resp").innerHTML = "O maximo divisor comum dos números é: " + results
+    }
+  </script>
+</body>
+
+</html>

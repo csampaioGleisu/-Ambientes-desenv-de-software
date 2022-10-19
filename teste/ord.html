@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algoritmos</title>
+  <style>
+    body {
+      background-image: linear-gradient(70deg, gray, blue, rgb(92, 13, 92));
+      color: black;
+      border-bottom-color: rgb(127, 255, 148);
+      background-size: 10000px;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>Ordenação</h3>
+  Digite os números:
+  <p></p>
+  <input id="v1" type="number">
+  <p></p>
+  <input id="v2" type="number">
+  <p></p>
+  <input id="v3" type="number">
+  <p></p>
+  <input id="v4" type="number">
+  <p></p>
+  <input id="v5" type="number">
+  <p></p>
+  <button onclick="funcao()">Ordenar</button>
+  <p id="result1"></p>
+  <a href="/Entregavel2.html">Retornar</a>
+
+  <script>
+    function funcao() {
+      function cres(pr1, pr2) {
+        return pr1 - pr2;
+      }
+      var vetOr = Array(
+        (document.getElementById("v1").value),
+        (document.getElementById("v2").value),
+        (document.getElementById("v3").value),
+        (document.getElementById("v4").value),
+        (document.getElementById("v5").value));
+
+      var vetCres = vetOr;
+      document.getElementById("result1").innerHTML = "Ordem Crescente: " + vetCres.sort(cres);
+    }
+  </script>
+</body>
+
+</html>
