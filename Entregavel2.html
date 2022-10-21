@@ -8,6 +8,7 @@
   <title>Algoritmos</title>
   <style>
     body {
+      background-color: black;
       background: url('/png/ambdev.png');
       margin: 0;
       background-size: 100%;
@@ -45,17 +46,46 @@
       Ordenação
 
     </a>
+    <h3>Ordenação</h3>
+    Digite os números:
+    <p></p>
+    <input id="v1" type="number">
+    <p></p>
+    <input id="v2" type="number">
+    <p></p>
+    <input id="v3" type="number">
+    <p></p>
+    <input id="v4" type="number">
+    <p></p>
+    <input id="v5" type="number">
+    <p></p>
+    <button onclick="funcao()">Ordenar</button>
+    <p id="result1"></p>
+    <a href="/Entregavel2.html">Retornar</a>
     </p>
     <p>
       <a href="/teste2/primo.html">
         Número Primo
 
       </a>
+      <span>Entre com um número: </span><input type="number" id="num" />
+      <input type="button" value="Enter" onclick="verificarPrimo();" />
+    <p id="resposta"></p>
+    <a href="/Entregavel2.html">Retornar</a>
     </p>
     <p>
       <a href="/teste2/mdcs.html">
         Maximo Divisor Comum
       </a>
+      <span>Coloque os números desejados: </span><br />
+      Primeiro número<br />
+      <input type="number" id="mdcN" /><br />
+      Segundo número<br />
+      <input type="number" id="mdcN2" /><br />
+      <input type="button" value="Enter" onclick="teste()" />
+    <p id="resp"></p>
+    <a href="/Entregavel2.html">Retornar</a>
+
     </p>
   </h3>
 
@@ -145,8 +175,67 @@
 
 
 
+  <script>
+
+    function verificarPrimo() {
+      var num = document.getElementById("num").value;
+      var count = 0;
+
+      if (num != null) {
+        for (i = 2; i < num; i++) {
+          var resto = num % i;
+          if (resto == 0) {
+            document.getElementById("resposta").innerHTML = "O número " + num + " não é primo!";
+            break;
+          } else {
+            count += 1;
+          }
+        }
+        if (count == (num - 2)) {
+          document.getElementById("resposta").innerHTML = "O número " + num + " é primo!";
+        }
+      }
+    }
+  </script>
 
 
+
+  <script>
+
+    function calcularMDC(num1, num2) {
+      //var num1 = document.getElementsById("mdcN").value;
+      //var num2 = document.getElementById("mdcN2").value;
+      var resto;
+      do {
+        resto = num1 % num2;
+        num1 = num2;
+        num2 = resto;
+      } while (resto != 0);
+      return num1;
+
+    }
+    function teste() {
+      var results = calcularMDC(mdcN.value, mdcN2.value)
+      document.getElementById("resp").innerHTML = "O maximo divisor comum dos números é: " + results
+    }
+  </script>
+
+  <script>
+    function funcao() {
+      function cres(pr1, pr2) {
+        return pr1 - pr2;
+      }
+      var vetOr = Array(
+        (document.getElementById("v1").value),
+        (document.getElementById("v2").value),
+        (document.getElementById("v3").value),
+        (document.getElementById("v4").value),
+        (document.getElementById("v5").value));
+
+      var vetCres = vetOr;
+      document.getElementById("result1").innerHTML = "Ordem Crescente: " + vetCres.sort(cres);
+    }
+  </script>
 </body>
 
 </html>
