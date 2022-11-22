@@ -1,7 +1,7 @@
 function numeroprimo(num) {
-    for (var divisor = 2; divisor < num; divisor++) 
+  for (var divisor = 2; divisor < num; divisor++)
     if (num % divisor == 0) return false;
-    return true;
+  return true;
 }
 
 // ↓ pra dar um fim na repetição do código.Irá mostras todos os primos até o número desejado.
